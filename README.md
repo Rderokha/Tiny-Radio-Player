@@ -3,7 +3,7 @@ A tiny radio player written in Python
 
 ## Requirements
 - Python 3.x
-- pygame
+- python-vlc
 
 ## Installation
 
