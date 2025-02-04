@@ -47,9 +47,9 @@ stream_url = random.choice(urls)
 def play_radio_stream(url):
     player = vlc.MediaPlayer(url)
     player.play()
-    time.sleep(1)
-
     print(f"Now playing from: {url}")
+    while True:
+        time.sleep(1)
 
 def main():
     play_radio_stream(stream_url)
