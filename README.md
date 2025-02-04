@@ -9,7 +9,7 @@ A tiny radio player written in Python
 
 1. Clone this repository:
 
-   git clone https://github.com/username/radio_player.git
+   git clone https://github.com/Rderokha/Tiny-Radio-Player.git
 
 2. Install the dependencies:
 
@@ -20,4 +20,4 @@ To run tiny radio player:
     
     python tiny_radio_player.py
 
-Press 'q' to stop the streaming.
+Press CTRL+C to stop the streaming.
