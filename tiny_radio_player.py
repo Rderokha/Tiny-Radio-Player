@@ -1,6 +1,7 @@
 import random
 import vlc
 import time
+import os
 
 urls = [
     "https://27363.live.streamtheworld.com:443/ROCK_AND_POPAAC.aac",
@@ -42,6 +43,7 @@ urls = [
     "https://27693.live.streamtheworld.com:443/ROCK_AND_POP.mp3",
     "https://24443.live.streamtheworld.com:443/ROCK_AND_POP.mp3"
 ]
+pid = os.getpid()
 stream_url = random.choice(urls)
 
 def play_radio_stream(url):
@@ -52,6 +54,7 @@ def play_radio_stream(url):
         time.sleep(1)
 
 def main():
+    print(f"PID: {pid}")
     play_radio_stream(stream_url)
 
 if __name__ == "__main__":
