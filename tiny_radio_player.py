@@ -1,6 +1,6 @@
-import pygame
-import sys
 import random
+import vlc
+import time
 
 urls = [
     "https://27363.live.streamtheworld.com:443/ROCK_AND_POPAAC.aac",
@@ -42,28 +42,24 @@ urls = [
     "https://27693.live.streamtheworld.com:443/ROCK_AND_POP.mp3",
     "https://24443.live.streamtheworld.com:443/ROCK_AND_POP.mp3"
 ]
-
 stream_url = random.choice(urls)
 
 def play_radio_stream(url):
-    pygame.mixer.init()
-    pygame.mixer.music.load(url)
-    pygame.mixer.music.play()
+    player = vlc.MediaPlayer(url)
+    player.play()
+    time.sleep(1)
 
-    print(f"Reproduciendo: {url}")
-    print("Presiona 'q' para detener la transmisión.")
-    
-    while pygame.mixer.music.get_busy():
+    print(f"Now playing from: {url}")
+    print("Press 'q' to stop the stream.")
+
+    while True:
         user_input = input()
         if user_input.lower() == 'q':
-            pygame.mixer.music.stop()
-            print("Transmisión detenida.")
+            player.stop()
+            print("Stream stopped.")
             break
 
 def main():
-    print("Reproduciendo la estación de radio (se ha seleccionado aleatoriamente)...")
-    print("Presiona 'q' para detener la transmisión.")
-    
     play_radio_stream(stream_url)
 
 if __name__ == "__main__":
