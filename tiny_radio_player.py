@@ -50,14 +50,6 @@ def play_radio_stream(url):
     time.sleep(1)
 
     print(f"Now playing from: {url}")
-    print("Press 'q' to stop the stream.")
-
-    while True:
-        user_input = input()
-        if user_input.lower() == 'q':
-            player.stop()
-            print("Stream stopped.")
-            break
 
 def main():
     play_radio_stream(stream_url)
